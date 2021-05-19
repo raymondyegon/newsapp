@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "589905332998",
+    "project_id": "news-app-dbae2",
+    "storage_bucket": "news-app-dbae2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:589905332998:android:19fadbabb2df674fa06c87",
+        "android_client_info": {
+          "package_name": "com.newsapp.newsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "589905332998-mcv6347quu1oksd1m7d2995h1p9a5hep.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDST2LWuQhn1eig-6QVPwtjYmDF_eqOasY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "589905332998-mcv6347quu1oksd1m7d2995h1p9a5hep.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
