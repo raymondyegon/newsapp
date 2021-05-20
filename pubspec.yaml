@@ -50,6 +50,10 @@ dependencies:
   # To monitor app crashes
   firebase_crashlytics: ^0.4.0+1 
 
+  # To achieve infinite scrolling while doing pagination
+  infinite_scroll_pagination: ^2.3.0
+
+
 dev_dependencies:
   # For widget testing
   flutter_test:
