@@ -56,6 +56,9 @@ dependencies:
   # To get the fonts (IBM Plex Sans) 
   google_fonts: ^1.1.2
 
+  # To format date
+  intl: ^0.16.1
+
 
 dev_dependencies:
   # For widget testing
