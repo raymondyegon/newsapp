@@ -57,6 +57,7 @@ android {
         applicationId "com.newsapp.newsapp"
         minSdkVersion 16
         targetSdkVersion 29
+        multiDexEnabled true
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
@@ -79,6 +80,7 @@ android {
 
         implementation 'com.google.firebase:firebase-analytics'
         implementation 'com.google.firebase:firebase-crashlytics'
+        implementation 'com.android.support:multidex:1.0.3'
 
     }
 }
