@@ -5,13 +5,12 @@ class BaseTheme {
 
   Color background = Colors.white;
   Color backgroundDark = Color.fromRGBO(17, 24, 39, 1);
-  Color backgroundGrey = Color.fromRGBO(243, 244, 246, 1);
-  Color backgroundGeryLight = Color.fromRGBO(249, 250, 251, 1);
 
-  Color grayDarkest = Color.fromRGBO(31, 41, 55, 1);
-  Color greyDark = Color.fromRGBO(55, 65, 81, 1);
-  Color grayLight = Color.fromRGBO(107, 114, 128, 1);
-  Color grayLightest = Color.fromRGBO(209, 213, 219, 1);
-
-  Color iconGrey = Color.fromRGBO(156, 163, 175, 1);
+  Color gray50 = Color.fromRGBO(249, 250, 251, 1);
+  Color gray100 = Color.fromRGBO(243, 244, 246, 1);
+  Color gray300 = Color.fromRGBO(209, 213, 219, 1);
+  Color gray400 = Color.fromRGBO(156, 163, 175, 1);
+  Color gray500 = Color.fromRGBO(107, 114, 128, 1);
+  Color gray700 = Color.fromRGBO(55, 65, 81, 1);
+  Color gray800 = Color.fromRGBO(31, 41, 55, 1);
 }

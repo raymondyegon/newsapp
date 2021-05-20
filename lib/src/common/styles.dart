@@ -9,7 +9,7 @@ class AppStyles {
     return GoogleFonts.ibmPlexSans(
       fontSize: 11.5.sp,
       fontWeight: FontWeight.w600,
-      color: StateContainer.of(context).theme.grayDarkest,
+      color: StateContainer.of(context).theme.gray800,
     );
   }
 
@@ -18,7 +18,7 @@ class AppStyles {
     return GoogleFonts.ibmPlexSans(
       fontSize: 11.5.sp,
       fontWeight: FontWeight.w400,
-      color: StateContainer.of(context).theme.grayDarkest,
+      color: StateContainer.of(context).theme.gray800,
     );
   }
 }

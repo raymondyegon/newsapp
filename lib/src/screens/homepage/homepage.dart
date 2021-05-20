@@ -50,10 +50,10 @@ class _HomePageState extends State<HomePage> {
             ),
             selectedLabelStyle: AppStyles.textStyleSelected(context),
             unselectedIconTheme: IconThemeData(
-              color: _theme.iconGrey,
+              color: _theme.gray400,
               size: 18.0.sp,
             ),
-            unselectedItemColor: _theme.greyDark,
+            unselectedItemColor: _theme.gray700,
             unselectedLabelStyle: AppStyles.textStyleUnselected(context),
             onTap: (int selected) {
               if (selected != 2) {
