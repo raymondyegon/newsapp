@@ -6,6 +6,7 @@ class BaseTheme {
   Color background = Colors.white;
   Color backgroundDark = Color.fromRGBO(17, 24, 39, 1);
   Color backgroundGrey = Color.fromRGBO(243, 244, 246, 1);
+  Color backgroundGeryLight = Color.fromRGBO(249, 250, 251, 1);
 
   Color grayDarkest = Color.fromRGBO(31, 41, 55, 1);
   Color greyDark = Color.fromRGBO(55, 65, 81, 1);

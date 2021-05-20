@@ -3,6 +3,7 @@ import 'package:firebase_analytics/observer.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:newsapp/src/appstate_container.dart';
+import 'package:newsapp/src/screens/homepage/homepage.dart';
 import 'package:sizer/sizer.dart';
 
 class App extends StatefulWidget {
@@ -40,9 +41,7 @@ class _AppState extends State<App> {
                   case '/':
                     return MaterialPageRoute(
                       settings: settings,
-                      builder: (_) => Container(
-                        child: Text('Entry page'),
-                      ),
+                      builder: (_) => HomePage(),
                     );
 
                   default:
