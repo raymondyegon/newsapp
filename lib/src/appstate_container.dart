@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
+import 'package:newsapp/src/common/theme.dart';
 import 'package:newsapp/src/service_locator.dart';
 
 class _InheritedStateContainer extends InheritedWidget {
@@ -45,7 +46,11 @@ class StateContainer extends StatefulWidget {
 ///
 /// Basically the central hub behind the entire app
 class StateContainerState extends State<StateContainer> {
+  //To pretty log what we want
   final Logger log = sl.get<Logger>();
+
+  // To acces the app theme
+  BaseTheme theme = BaseTheme();
 
   @override
   void initState() {

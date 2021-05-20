@@ -53,6 +53,9 @@ dependencies:
   # To achieve infinite scrolling while doing pagination
   infinite_scroll_pagination: ^2.3.0
 
+  # To get the fonts (IBM Plex Sans) 
+  google_fonts: ^1.1.2
+
 
 dev_dependencies:
   # For widget testing

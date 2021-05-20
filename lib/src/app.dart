@@ -1,6 +1,8 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_analytics/observer.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:newsapp/src/appstate_container.dart';
 import 'package:sizer/sizer.dart';
 
 class App extends StatefulWidget {
@@ -27,6 +29,12 @@ class _AppState extends State<App> {
               title: 'News App',
               initialRoute: '/',
               navigatorObservers: <NavigatorObserver>[observer],
+              theme: ThemeData(
+                primaryColor: StateContainer.of(context).theme.primary,
+                backgroundColor: StateContainer.of(context).theme.background,
+                textTheme: GoogleFonts.ibmPlexSansTextTheme(),
+                fontFamily: GoogleFonts.ibmPlexSans().fontFamily,
+              ),
               onGenerateRoute: (RouteSettings settings) {
                 switch (settings.name) {
                   case '/':
