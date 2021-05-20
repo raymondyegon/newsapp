@@ -12,4 +12,6 @@ class BaseTheme {
   Color greyDark = Color.fromRGBO(55, 65, 81, 1);
   Color grayLight = Color.fromRGBO(107, 114, 128, 1);
   Color grayLightest = Color.fromRGBO(209, 213, 219, 1);
+
+  Color iconGrey = Color.fromRGBO(156, 163, 175, 1);
 }
