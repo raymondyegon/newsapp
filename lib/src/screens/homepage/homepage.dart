@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:newsapp/src/appstate_container.dart';
 import 'package:newsapp/src/common/styles.dart';
+import 'package:newsapp/src/screens/favorites/favorites.dart';
+import 'package:newsapp/src/screens/feed/feed.dart';
 import 'package:sizer/sizer.dart';
 
 class HomePage extends StatefulWidget {
@@ -18,6 +20,7 @@ class _HomePageState extends State<HomePage> {
     var _theme = StateContainer.of(context).theme;
 
     return Scaffold(
+      backgroundColor: _theme.gray50,
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.only(
@@ -77,6 +80,15 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
           ),
+        ),
+      ),
+      body: SafeArea(
+        child: IndexedStack(
+          index: _currentNav,
+          children: [
+            Feed(),
+            Favorite(),
+          ],
         ),
       ),
     );
