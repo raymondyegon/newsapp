@@ -129,6 +129,7 @@ class ArticleFeedUtil {
   static Widget articleFeed({
     @required ArticleModel article,
     @required BuildContext context,
+    Widget titleWidget,
   }) {
     // The current app theme
     var _theme = StateContainer.of(context).theme;
@@ -189,10 +190,11 @@ class ArticleFeedUtil {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      article.title,
-                      style: AppStyles.textStyleFeedTitle(context),
-                    ),
+                    titleWidget ??
+                        Text(
+                          article.title,
+                          style: AppStyles.textStyleFeedTitle(context),
+                        ),
                     Row(
                       children: [
                         Icon(
