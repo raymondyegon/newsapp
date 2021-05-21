@@ -76,11 +76,13 @@ class _HomePageState extends State<HomePage> {
             unselectedItemColor: _theme.gray700,
             unselectedLabelStyle: AppStyles.textStyleUnselected(context),
             onTap: (int selected) {
-              if (selected != 2) {
-                setState(() {
-                  _currentNav = selected;
-                });
-              }
+              setState(() {
+                _currentNav = selected;
+
+                if (_isSearchVisible == true) {
+                  _isSearchVisible = !_isSearchVisible;
+                }
+              });
             },
             items: [
               BottomNavigationBarItem(
