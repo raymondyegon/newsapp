@@ -3,6 +3,7 @@ import 'package:newsapp/src/appstate_container.dart';
 import 'package:newsapp/src/common/styles.dart';
 import 'package:newsapp/src/screens/favorites/favorites.dart';
 import 'package:newsapp/src/screens/feed/feed.dart';
+import 'package:newsapp/src/screens/search/search_feed.dart';
 import 'package:sizer/sizer.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,6 +14,22 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   // To check the current pressed bottom bar item
   int _currentNav = 0;
+
+  // To check whether search page is visible
+  bool _isSearchVisible;
+
+  void _toggleSearch() {
+    setState(() {
+      _isSearchVisible = !_isSearchVisible;
+    });
+  }
+
+  @override
+  void initState() {
+    _isSearchVisible = false;
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -83,12 +100,22 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: SafeArea(
-        child: IndexedStack(
-          index: _currentNav,
-          children: [
-            Feed(),
-            Favorite(),
-          ],
+        child: Visibility(
+          visible: _isSearchVisible,
+          replacement: IndexedStack(
+            index: _currentNav,
+            children: [
+              Feed(
+                searchPressed: _toggleSearch,
+              ),
+              Favorite(
+                searchPressed: _toggleSearch,
+              ),
+            ],
+          ),
+          child: SearchFeed(
+            searchCancelled: _toggleSearch,
+          ),
         ),
       ),
     );

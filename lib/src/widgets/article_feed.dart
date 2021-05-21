@@ -13,6 +13,7 @@ class ArticleFeedUtil {
     @required String description,
     @required String zeroArticlesDescription,
     @required IconData icon,
+    Function searchPressed,
     Widget zeroDescriptionWidget,
   }) {
     // The current app theme
@@ -25,7 +26,7 @@ class ArticleFeedUtil {
       child: Column(
         children: [
           Padding(
-            padding: EdgeInsets.all(15),
+            padding: EdgeInsets.symmetric(horizontal: 2.5.w, vertical: 5),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -33,10 +34,14 @@ class ArticleFeedUtil {
                   title,
                   style: AppStyles.textStyleTitleTop(),
                 ),
-                Icon(
-                  Icons.search,
-                  size: 17.0.sp,
-                  color: Colors.white,
+                IconButton(
+                  onPressed: searchPressed,
+                  padding: EdgeInsets.zero,
+                  icon: Icon(
+                    Icons.search,
+                    size: 17.0.sp,
+                    color: Colors.white,
+                  ),
                 ),
               ],
             ),
@@ -67,7 +72,7 @@ class ArticleFeedUtil {
                           padding: EdgeInsets.all(30),
                           margin: EdgeInsets.only(bottom: 15),
                           child: Icon(
-                            Icons.text_snippet_rounded,
+                            icon,
                             color: _theme.gray300,
                             size: 80.0.sp,
                           ),
@@ -129,6 +134,9 @@ class ArticleFeedUtil {
     var _theme = StateContainer.of(context).theme;
 
     return InkWell(
+      onTap: () {
+        Navigator.of(context).pushNamed('/article', arguments: article);
+      },
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,
