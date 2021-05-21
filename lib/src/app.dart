@@ -3,6 +3,7 @@ import 'package:firebase_analytics/observer.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:newsapp/src/appstate_container.dart';
+import 'package:newsapp/src/screens/feed/single_feed.dart';
 import 'package:newsapp/src/screens/homepage/homepage.dart';
 import 'package:sizer/sizer.dart';
 
@@ -42,6 +43,12 @@ class _AppState extends State<App> {
                     return MaterialPageRoute(
                       settings: settings,
                       builder: (_) => HomePage(),
+                    );
+
+                  case '/article':
+                    return MaterialPageRoute(
+                      settings: settings,
+                      builder: (_) => SingleFeed(),
                     );
 
                   default:
