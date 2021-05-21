@@ -5,6 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:newsapp/src/appstate_container.dart';
 import 'package:newsapp/src/screens/feed/single_feed.dart';
 import 'package:newsapp/src/screens/homepage/homepage.dart';
+import 'package:newsapp/src/service_locator.dart';
+import 'package:newsapp/src/utils/nav_service.dart';
 import 'package:sizer/sizer.dart';
 
 class App extends StatefulWidget {
@@ -31,6 +33,7 @@ class _AppState extends State<App> {
               title: 'News App',
               initialRoute: '/',
               navigatorObservers: <NavigatorObserver>[observer],
+              navigatorKey: sl.get<NavigatorService>().navigatorKey,
               theme: ThemeData(
                 primaryColor: StateContainer.of(context).theme.primary,
                 backgroundColor: StateContainer.of(context).theme.background,
