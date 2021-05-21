@@ -38,8 +38,8 @@ dependencies:
   # Cache images
   cached_network_image: ^2.5.0
 
-  # Icons package
-  flutter_icons: ^1.1.0 
+  # Shared prefs to store info
+  shared_preferences: ^0.5.10
 
   # Firebase Core Flutter SDK
   firebase_core: ^0.7.0
