@@ -6,7 +6,120 @@ import 'package:newsapp/src/model/article_model.dart';
 import 'package:sizer/sizer.dart';
 
 class ArticleFeedUtil {
-  // static Widget
+  static Widget articleFeedList({
+    @required List<ArticleModel> articles,
+    @required BuildContext context,
+    @required String title,
+    @required String description,
+    @required String zeroArticlesDescription,
+    @required IconData icon,
+    @required Widget zeroDescriptionWidget,
+  }) {
+    // The current app theme
+    var _theme = StateContainer.of(context).theme;
+
+    return Container(
+      height: 100.0.h,
+      width: 100.0.w,
+      color: _theme.primary,
+      child: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.all(15),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  title,
+                  style: AppStyles.textStyleTitleTop(),
+                ),
+                Icon(
+                  Icons.search,
+                  size: 17.0.sp,
+                  color: Colors.white,
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(
+                color: _theme.gray50,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(15),
+                  topRight: Radius.circular(15),
+                ),
+              ),
+              padding: EdgeInsets.symmetric(
+                horizontal: 3.0.w,
+                vertical: 1.5.h,
+              ),
+              width: 100.0.w,
+              child: articles?.length == 0
+                  ? Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: _theme.gray100,
+                          ),
+                          padding: EdgeInsets.all(30),
+                          margin: EdgeInsets.only(bottom: 15),
+                          child: Icon(
+                            Icons.text_snippet_rounded,
+                            color: _theme.gray300,
+                            size: 80.0.sp,
+                          ),
+                        ),
+                        Text(
+                          zeroArticlesDescription,
+                          style: AppStyles.textStyleNoArticles(context),
+                        ),
+                        Visibility(
+                          visible: zeroDescriptionWidget != null,
+                          child: zeroDescriptionWidget,
+                        ),
+                      ],
+                    )
+                  : Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          description,
+                          style: AppStyles.textStylePageDescription(context),
+                        ),
+                        SizedBox(
+                          height: 2.5.h,
+                        ),
+                        Expanded(
+                          child: ListView.separated(
+                            itemCount: articles.length,
+                            separatorBuilder:
+                                (BuildContext context, int index) {
+                              return SizedBox(
+                                height: 1.5.h,
+                              );
+                            },
+                            itemBuilder: (BuildContext context, int index) {
+                              ArticleModel _article = articles[index];
+
+                              return articleFeed(
+                                article: _article,
+                                context: context,
+                              );
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+            ),
+          )
+        ],
+      ),
+    );
+  }
 
   static Widget articleFeed({
     @required ArticleModel article,
