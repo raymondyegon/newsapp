@@ -13,7 +13,7 @@ class ArticleFeedUtil {
     @required String description,
     @required String zeroArticlesDescription,
     @required IconData icon,
-    @required Widget zeroDescriptionWidget,
+    Widget zeroDescriptionWidget,
   }) {
     // The current app theme
     var _theme = StateContainer.of(context).theme;
