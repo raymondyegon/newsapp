@@ -66,4 +66,13 @@ class AppStyles {
       fontWeight: FontWeight.w700,
     );
   }
+
+  // For appbar texts
+  static TextStyle textStyleAppbar() {
+    return GoogleFonts.ibmPlexSans(
+      color: Colors.white,
+      fontWeight: FontWeight.w600,
+      fontSize: 17.0.sp,
+    );
+  }
 }
