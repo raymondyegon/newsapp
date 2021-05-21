@@ -34,7 +34,9 @@ class SharedPrefsUtil {
   }
 
   Future<List<String>> getFavorites() async {
-    return await get(favorites, defaultValue: []);
+    List<dynamic> data = await get(favorites, defaultValue: <String>[]);
+
+    return data.map((e) => e.toString()).toList();
   }
 
   Future<void> removeFavorite(String value) async {

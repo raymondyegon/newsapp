@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:newsapp/src/appstate_container.dart';
 import 'package:newsapp/src/common/styles.dart';
 import 'package:newsapp/src/model/article_model.dart';
-import 'package:newsapp/src/utils/title_search_formater.dart';
+import 'package:newsapp/src/utils/article_format_utils.dart';
 import 'package:newsapp/src/widgets/article_feed.dart';
 import 'package:sizer/sizer.dart';
 
@@ -182,7 +182,8 @@ class _SearchFeedState extends State<SearchFeed> {
                                     return ArticleFeedUtil.articleFeed(
                                       article: _article,
                                       context: context,
-                                      titleWidget: TitleFormater.format(
+                                      titleWidget:
+                                          ArticleFormater.titleFormater(
                                         title: _article.title,
                                         context: context,
                                         searched: searchController.value.text,

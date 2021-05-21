@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:newsapp/src/appstate_container.dart';
 import 'package:newsapp/src/common/styles.dart';
 import 'package:newsapp/src/model/article_model.dart';
+import 'package:newsapp/src/utils/article_format_utils.dart';
 import 'package:sizer/sizer.dart';
 
 class SingleFeed extends StatefulWidget {
@@ -116,10 +117,13 @@ class _SingleFeedState extends State<SingleFeed> {
                                   width: 6.5.w,
                                 ),
                                 IconButton(
-                                  onPressed: () {},
-                                  icon: Icon(
-                                    Icons.favorite_border,
-                                    color: _theme.gray500,
+                                  onPressed: () {
+                                    StateContainer.of(context)
+                                        .toggleFavorite(article.id);
+                                  },
+                                  icon: ArticleFormater.getIcon(
+                                    context: context,
+                                    id: article.id,
                                   ),
                                 ),
                               ],

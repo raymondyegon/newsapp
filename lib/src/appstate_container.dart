@@ -3,6 +3,7 @@ import 'package:logger/logger.dart';
 import 'package:newsapp/src/common/theme.dart';
 import 'package:newsapp/src/model/article_model.dart';
 import 'package:newsapp/src/service_locator.dart';
+import 'package:newsapp/src/utils/sharedprefsutil.dart';
 
 class _InheritedStateContainer extends InheritedWidget {
   // Data is your entire state.
@@ -96,9 +97,54 @@ class StateContainerState extends State<StateContainer> {
   // Where we store our articles
   List<ArticleModel> favorites = [];
 
+  // The List of ID's of our favorite articles
+  List<String> favoritesId = [];
+
   @override
   void initState() {
     super.initState();
+    _getFavorites();
+  }
+
+  void _getFavorites() async {
+    await sl.get<SharedPrefsUtil>().getFavorites().then(
+      (List<String> result) {
+        setState(
+          () {
+            favoritesId.addAll(result);
+          },
+        );
+      },
+    );
+  }
+
+  void toggleFavorite(String id) async {
+    if (favoritesId.contains(id)) {
+      await sl.get<SharedPrefsUtil>().removeFavorite(id).then(
+        (_) {
+          setState(
+            () {
+              favoritesId.remove(id);
+
+              favorites.removeWhere((article) => article.id == id);
+            },
+          );
+        },
+      );
+    } else {
+      await sl.get<SharedPrefsUtil>().setFavorite(id).then(
+        (_) {
+          setState(
+            () {
+              favoritesId.add(id);
+
+              favorites
+                  .add(articles.singleWhere((article) => article.id == id));
+            },
+          );
+        },
+      );
+    }
   }
 
   @override
