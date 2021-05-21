@@ -75,4 +75,22 @@ class AppStyles {
       fontSize: 17.0.sp,
     );
   }
+
+  // For article page summary
+  static TextStyle textStyleArticleSummary(BuildContext context) {
+    return GoogleFonts.ibmPlexSans(
+      color: StateContainer.of(context).theme.gray700,
+      fontWeight: FontWeight.w400,
+      fontSize: 11.5.sp,
+    );
+  }
+
+  // For how to favorite description
+  static TextStyle textStyleFavoriteHow(BuildContext context) {
+    return GoogleFonts.ibmPlexSans(
+      color: StateContainer.of(context).theme.gray800,
+      fontWeight: FontWeight.w400,
+      fontSize: 11.5.sp,
+    );
+  }
 }
