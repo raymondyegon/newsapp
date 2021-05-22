@@ -52,7 +52,7 @@ class ApiService {
     log.d(response.statusCode);
 
     // Log the body data
-    // log.d(response.data);
+    log.d(response.data);
 
     if (response.statusCode == 200) {
       var articles = response.data;
@@ -83,7 +83,8 @@ class ApiService {
     log.d(response.data);
 
     if (response.statusCode == 200) {
-      return ArticleModel.fromJson(response.data);
+      ArticleModel result = ArticleModel.fromJson(response.data, id: id);
+      return result;
     } else {
       throw {
         'statusCode': response.statusCode,

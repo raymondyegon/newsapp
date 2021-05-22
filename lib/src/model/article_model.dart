@@ -19,9 +19,9 @@ class ArticleModel {
     this.publishedAt,
   });
 
-  factory ArticleModel.fromJson(Map<String, dynamic> json) {
+  factory ArticleModel.fromJson(Map<String, dynamic> json, {String id}) {
     return ArticleModel(
-      id: json['id'],
+      id: json['id'] ?? id,
       title: json['title'],
       url: json['url'],
       imageUrl: json['imageUrl'],
@@ -30,5 +30,12 @@ class ArticleModel {
       publishedAt: DateFormat.yMMMMd('en_US')
           .format(DateTime.tryParse(json['publishedAt'])),
     );
+  }
+
+  set id(String idd) => id = idd;
+
+  @override
+  String toString() {
+    return id;
   }
 }
