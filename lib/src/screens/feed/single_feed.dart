@@ -33,8 +33,7 @@ class _SingleFeedState extends State<SingleFeed> {
         child: Container(
           height: 100.0.h,
           width: 100.0.w,
-          child: ListView(
-            shrinkWrap: true,
+          child: Column(
             children: [
               Container(
                 decoration: BoxDecoration(
@@ -55,7 +54,9 @@ class _SingleFeedState extends State<SingleFeed> {
                       imageUrl: article.imageUrl,
                       placeholder: (context, url) => Center(
                         child: CircularProgressIndicator(
-                          backgroundColor: _theme.primary,
+                          valueColor:
+                              AlwaysStoppedAnimation<Color>(_theme.primary),
+                          backgroundColor: Colors.white,
                         ),
                       ),
                       imageBuilder: (context, imageProvider) => Container(
@@ -71,7 +72,7 @@ class _SingleFeedState extends State<SingleFeed> {
                         ),
                       ),
                       errorWidget: (context, url, error) =>
-                          new Icon(Icons.error),
+                          Center(child: new Icon(Icons.error)),
                     ),
                     Align(
                       alignment: Alignment.bottomCenter,
@@ -119,7 +120,7 @@ class _SingleFeedState extends State<SingleFeed> {
                                 IconButton(
                                   onPressed: () {
                                     StateContainer.of(context)
-                                        .toggleFavorite(article.id);
+                                        .toggleFavorite(article);
                                   },
                                   icon: ArticleFormater.getIcon(
                                     context: context,
@@ -135,14 +136,16 @@ class _SingleFeedState extends State<SingleFeed> {
                   ],
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 2.0.w,
-                  vertical: 1.4.h,
-                ),
-                child: Text(
-                  article.summary,
-                  style: AppStyles.textStyleArticleSummary(context),
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 2.0.w,
+                    vertical: 1.4.h,
+                  ),
+                  child: Text(
+                    article.summary,
+                    style: AppStyles.textStyleArticleSummary(context),
+                  ),
                 ),
               ),
             ],
