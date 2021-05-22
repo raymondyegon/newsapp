@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:logger/logger.dart';
+import 'package:newsapp/src/network/api_service.dart';
 import 'package:newsapp/src/utils/nav_service.dart';
 import 'package:newsapp/src/utils/sharedprefsutil.dart';
 
@@ -15,4 +16,7 @@ void setupServiceLocator() {
 
   // For navigation helper
   sl.registerLazySingleton<NavigatorService>(() => NavigatorService());
+
+  // For api Calls
+  sl.registerLazySingleton<ApiService>(() => ApiService());
 }

@@ -52,7 +52,7 @@ class ApiService {
     log.d(response.statusCode);
 
     // Log the body data
-    log.d(response.data);
+    // log.d(response.data);
 
     if (response.statusCode == 200) {
       var articles = response.data;
