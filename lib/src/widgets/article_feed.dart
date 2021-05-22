@@ -158,7 +158,8 @@ class ArticleFeedUtil {
               imageUrl: article.imageUrl,
               placeholder: (context, url) => Center(
                 child: CircularProgressIndicator(
-                  backgroundColor: _theme.primary,
+                  valueColor: AlwaysStoppedAnimation<Color>(_theme.primary),
+                  backgroundColor: Colors.white,
                 ),
               ),
               imageBuilder: (context, imageProvider) => Container(
@@ -173,7 +174,8 @@ class ArticleFeedUtil {
                   ),
                 ),
               ),
-              errorWidget: (context, url, error) => new Icon(Icons.error),
+              errorWidget: (context, url, error) =>
+                  Center(child: new Icon(Icons.error)),
             ),
             Align(
               alignment: Alignment.bottomCenter,
@@ -214,8 +216,7 @@ class ArticleFeedUtil {
                         ),
                         IconButton(
                           onPressed: () async {
-                            StateContainer.of(context)
-                                .toggleFavorite(article.id);
+                            StateContainer.of(context).toggleFavorite(article);
                           },
                           icon: ArticleFormater.getIcon(
                             context: context,
