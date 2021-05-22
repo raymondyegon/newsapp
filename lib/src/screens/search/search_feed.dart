@@ -38,7 +38,8 @@ class _SearchFeedState extends State<SearchFeed> {
     var _theme = StateContainer.of(context).theme;
 
     // We use this for testing
-    List<ArticleModel> _articles = StateContainer.of(context).articles;
+    List<ArticleModel> _articles =
+        StateContainer.of(context).newsFeedpagingController.itemList ?? [];
 
     return Container(
       height: 100.0.h,
