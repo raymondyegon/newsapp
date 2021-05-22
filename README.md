@@ -1,16 +1,47 @@
-# newsapp
+## **News App**
 
-News App to read about the latest articles
+News App that can be used to get the latest news about Spaceflight and one can save all the articles that they like. 
+
+## Built With
+* Flutter (1.22) - Focused on Android
+* Firebase (For analytics & Crashlytics)
+* Inherited Widget (For State Management)
+* Spaceflight News Api (Where We get our data)
+
 
 ## Getting Started
+### Prerequisites
+* flutter
+  
+  Install flutter from [Flutter website](https://flutter.dev)   
 
-This project is a starting point for a Flutter application.
+### Installation and Running
+1. Clone the repo
+   ```sh
+   git clone https://github.com/raymondyegon/newsapp
+   ```
+2. Install Flutter packages
+    ```sh
+    flutter pub get
+    ```
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Contributing
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## Contact
+
+Raymond Yegon - [@raymondyegon](https://github.com/raymondyegon) - raymondyegon17@gmail.com
+
+Project Link: [https://github.com/raymondyegon/newsapp](https://github.com/raymondyegon/newsapp)
