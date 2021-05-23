@@ -140,6 +140,7 @@ class ArticleFeedUtil {
         Navigator.of(context).pushNamed('/article', arguments: article);
       },
       child: Container(
+        key: Key(article.id),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(15)),
