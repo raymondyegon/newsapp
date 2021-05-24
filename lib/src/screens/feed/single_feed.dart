@@ -101,6 +101,22 @@ class _SingleFeedState extends State<SingleFeed> {
                               height: 2.5.h,
                               thickness: 1.5,
                             ),
+                            Text.rich(
+                              TextSpan(
+                                children: [
+                                  TextSpan(
+                                    text: 'By ',
+                                  ),
+                                  TextSpan(
+                                    text: article.newsSite,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              style: AppStyles.textStyleArticleSummary(context),
+                            ),
                             Row(
                               children: [
                                 Icon(
