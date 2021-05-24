@@ -17,14 +17,24 @@ News App that can be used to get the latest news about Spaceflight and one can s
 
 ### Installation and Running
 1. Clone the repo
-   ```sh
+   ```bash
    git clone https://github.com/raymondyegon/newsapp
    ```
-2. Install Flutter packages
-    ```sh
+   
+2. Move into the directory
+    ``` bash
+    cd newsapp
+    ```
+
+3. Install Flutter packages
+    ```bash
     flutter pub get
     ```
 
+4. Make sure you have the emulator running or you have a connected device and then run the application
+    ```bash
+    flutter run --debug
+    ```
 
 ## Contributing
 
